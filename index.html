@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PS Alarms APP</title>
+  <meta name="description" content="">
+  <meta name="author" content="Yonatan Geremew">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/reveal.min.css">
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/default.css" id="theme">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->  <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class='' data-state='' id='slide-1'>
+  <h2>PS Network Alarms APP</h2>
+  <h3>Data Produts Project</h3>
+
+<h4>Yonatan Geremew</h4>
+
+<h5>Mar 20 2015</h5>
+
+</section>
+<section class='' data-state='' id='slide-2'>
+  <h2>Background</h2>
+  <ul>
+<li>The main network elements in the Mobile Packet Switching network are the SGSN/MME and GGSN/PGW in a hybrid UMTS/LTE
+network. </li>
+<li>These in collaboration with other core network elements provide the data service for the customers.</li>
+<li>A good service provision depends on the health of these network elements, hence it is crucial to monitor the alarms.</li>
+<li>The &#39;PS Network Alarms&#39; application is a handy tool for this important network operator activity.</li>
+</ul>
+
+</section>
+<section class='' data-state='' id='slide-3'>
+  <h2>Data Source</h2>
+  <ul>
+<li>For this application I have selected the SGSN/MME network elements. </li>
+<li>The alarms are collected from three SGSNMME nodes.</li>
+<li>Here is the summary:</li>
+</ul>
+
+<pre><code>##   Alarm.ID                 Alarm.Source 
+##  10254:  29   SGSNMME_01.HW.NF.AA:1976  
+##  10334: 205   SGSNMME_02.HW.MW.AA:1712  
+##  11608: 908   SGSNMME_03.HW.KK.AA:1542  
+##  11609:2108                             
+##  12621:  26                             
+##  14001:1954
+</code></pre>
+
+</section>
+<section class='' data-state='' id='slide-4'>
+  <h2>Graphic Comparison</h2>
+  <p><small>Using the app, we can compare which alarms are more prominent on which nodes.</small></p>
+
+<p><img src="assets/fig/simple-plot-1.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto;" /></p>
+
+</section>
+<section class='' data-state='' id='slide-5'>
+  <h3>The APP</h3>
+  <p><small>On the PS Network alarms application you have a dropdown menu 
+option for selecting anyone of the nodes to display the alarms including the option to see all the alarms on all of the nodes, as below.</small></p>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
+
+<p>Thank You!</p>
+
+</section>
+    </div>
+  </div>
+</body>
+  <script src="libraries/frameworks/revealjs/lib/js/head.min.js"></script>
+  <script src="libraries/frameworks/revealjs/js/reveal.min.js"></script>
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    theme: Reveal.getQueryHash().theme || 'sky', 
+    transition: Reveal.getQueryHash().transition || 'page', 
+    dependencies: [
+    // Cross-browser shim that fully implements classList -
+    // https://github.com/eligrey/classList.js/
+      { src: 'libraries/frameworks/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList;}},
+      // Zoom in and out with Alt+click
+      { src: 'libraries/frameworks/revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Speaker notes
+      { src: 'libraries/frameworks/revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'libraries/frameworks/revealjs/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+  });
+  </script>  <!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+ 
+
+</html>

@@ -1,0 +1,77 @@
+---
+title       : PS Alarms APP
+subtitle    : sub title
+author      : Yonatan Geremew
+job         : 
+framework   : revealjs  
+revealjs    : {theme: sky, transition: page}
+highlighter : highlight.js  
+hitheme     : default      
+widgets     : []            
+mode        : selfcontained 
+knit        : slidify::knit2slides
+---
+
+## PS Network Alarms APP 
+
+### Data Produts Project
+#### Yonatan Geremew
+##### Mar 20 2015
+
+---
+
+## Background
+
+- The main network elements in the Mobile Packet Switching network are the SGSN/MME and GGSN/PGW in a hybrid UMTS/LTE
+network. 
+- These in collaboration with other core network elements provide the data service for the customers.
+- A good service provision depends on the health of these network elements, hence it is crucial to monitor the alarms.
+- The 'PS Network Alarms' application is a handy tool for this important network operator activity.
+
+---  
+
+## Data Source
+
+- For this application I have selected the SGSN/MME network elements. 
+- The alarms are collected from three SGSNMME nodes.
+- Here is the summary:
+```{r, echo=FALSE}
+#getwd()
+ps <- read.csv("PS Alarms.csv")
+ps$Alarm.ID <- as.factor(ps$Alarm.ID)
+psd <- split(ps, ps$Alarm.Source)
+summary(ps)
+```
+
+
+---  
+
+## Graphic Comparison
+
+<small>Using the app, we can compare which alarms are more prominent on which nodes.</small>
+
+```{r simple-plot, fig.height = 6, fig.align = 'center', message = F, echo=FALSE}
+old.par <- par(mfrow=c(1, 3))
+plot(psd[[1]]$Alarm.ID, main="Alarms on SGSNMME 01",xlab='Alarm ID', 
+     ylab='Count', ylim=c(0,900))
+plot(psd[[2]]$Alarm.ID, main="Alarms on SGSNMME 02",xlab='Alarm ID', 
+     ylab='Count', ylim=c(0,900))
+plot(psd[[3]]$Alarm.ID, main="Alarms on SGSNMME 03",xlab='Alarm ID', 
+     ylab='Count', ylim=c(0,900))
+par(old.par)
+```
+
+---
+
+### The APP
+
+<small>On the PS Network alarms application you have a dropdown menu 
+option for selecting anyone of the nodes to display the alarms including the option to see all the alarms on all of the nodes, as below.</small>
+
+```{r  fig.height = 6, fig.align = 'center', message = F, echo=FALSE}
+plot(ps$Alarm.ID, main="Alarms on all SGSNMME's", xlab='Alarm ID', ylab='Count', ylim=c(0,2000))
+```
+
+Thank You!
+
+
